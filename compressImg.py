@@ -19,6 +19,8 @@ for i in img_file_list:
         suffix = i.split('.')[-1]
         if imgID.endswith("small"):
             continue
+        if os.path.isfile(in_path+'/'+imgID+"_small."+suffix):
+            continue
         img=Image.open(in_path+'/'+i)
         if img.size[0]>img.size[1]:
             width = 896
